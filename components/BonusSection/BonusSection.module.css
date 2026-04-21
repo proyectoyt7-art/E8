@@ -1,0 +1,107 @@
+.section {
+  background-color: var(--white);
+  padding: 80px 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bold {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.freeBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #2db34a;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  z-index: 10;
+}
+
+.content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.bonusTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #a64d00;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.bonusText {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+@media (min-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+}
