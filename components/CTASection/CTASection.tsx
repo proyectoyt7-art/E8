@@ -1,6 +1,13 @@
+"use client";
 import styles from "./CTASection.module.css";
 
 const CTASection = () => {
+  const handleInitiateCheckout = () => {
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "InitiateCheckout");
+    }
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -9,6 +16,7 @@ const CTASection = () => {
           className={styles.button}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleInitiateCheckout}
         >
           QUIERO MI RECETARIO
         </a>
