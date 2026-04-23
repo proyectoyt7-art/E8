@@ -40,6 +40,22 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
+        <Script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-subids
+          async
+          defer
+        />
+        <Script id="utmify-pixel" strategy="afterInteractive">
+          {`
+            window.pixelId = "69e99a3a82ea2254a6898481";
+            var a = document.createElement("script");
+            a.setAttribute("async", "");
+            a.setAttribute("defer", "");
+            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+            document.head.appendChild(a);
+          `}
+        </Script>
       </head>
       <body>
         <noscript>
