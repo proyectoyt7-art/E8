@@ -12,7 +12,7 @@ const CTASection = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <a 
-          href="https://pay.hotmart.com/U105478368T?checkoutMode=10" 
+          href="https://pay.hotmart.com/U105478368T?checkoutMode=10&bid=1776794058121" 
           className={styles.button}
           target="_blank"
           rel="noopener noreferrer"
