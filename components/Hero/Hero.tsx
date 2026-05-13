@@ -7,7 +7,7 @@ const Hero = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.badge}>
-            GUÍA PRÁCTICA
+            RECETARIO DIGITAL
           </div>
           <h1 className={styles.title}>
             Recetas rápidas e irresistibles: ¡descubre todo lo que tu <span className={styles.highlight}>freidora de aire</span> puede preparar!

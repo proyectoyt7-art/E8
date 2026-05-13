@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./PricingSection.module.css";
 
@@ -10,6 +13,24 @@ const pricingItems = [
 ];
 
 const PricingSection = () => {
+  const [timeLeft, setTimeLeft] = useState(900); // 15 minutos = 900 segundos
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft]);
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -44,7 +65,12 @@ const PricingSection = () => {
           
           <div className={styles.offerBox}>
             <div className={styles.offerTag}>OFERTA ESPECIAL <br/><span>POR TIEMPO LIMITADO</span></div>
-            <div className={styles.finalPrice}>$9.99</div>
+            <div className={styles.priceWrapper}>
+              <div className={styles.finalPrice}>$9.99</div>
+              <div className={styles.inlineTimer}>
+                La oferta termina en: <span className={styles.timeHighlight}>{formatTime(timeLeft)}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
